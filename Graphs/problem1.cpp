@@ -9,11 +9,11 @@ using namespace std;
 
 vector<vector<int>>ady; // Nodos
 vector<bool>visited;
-vector<int> gold;
+vector<long> gold;
 
-int dfs(int nodo){
+long dfs(int nodo){
 	
-	int mn = gold[nodo];
+	long mn = gold[nodo];
 	
 	visited[nodo] = 1;
 	for(int nod : ady[nodo]){
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 		ady[b].push_back(a);
 	}
 	
-	int acumulador = 0;
+	long long acumulador = 0;
 	for(int i=0;i<n;i++) { 
 		if(!visited[i]){
 
