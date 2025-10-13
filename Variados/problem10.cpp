@@ -5,30 +5,25 @@ typedef long long ll;
 #define vi vector<int>
 #define forall(it, v) for(auto it = v.begin(); it != v.end(); it++)
 
-/https://codeforces.com/contest/2149/problem/C
+//https://codeforces.com/contest/2149/problem/A
 
 void solve() {
 	int n;
-	int k;
 	cin >> n;
-	cin >> k;
-	vector<int>v(n+1, -1);
-	int ans = 0;
+	map<int, int>f;
 	for(int i=0;i<n;i++) { 
 		int a;
 		cin >> a;
-		if(a == k) ans++;
-		v[a] = a;
+		f[a]++;
 	}
-	int ans2 = 0;
-	for(int i=0;i<k;i++) { 
-		if(v[i] == -1) ans2++;
+	
+	int ans = 0;
+	if(f[-1] % 2 != 0){
+		ans += 2;
 	}
-	if(ans2 > ans){
-		cout << ans2 << endl;
-	}else{
-		cout << ans << endl;
-	}
+	ans += f[0];
+	
+	cout << ans << endl;
 }
 
 int main() {
